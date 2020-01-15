@@ -1,0 +1,35 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZFA_UCUNCU_PROJE_ALV
+*&---------------------------------------------------------------------*
+FORM display.
+
+  ls_layout-zebra = abap_true.
+  ls_layout-colwidth_optimize = abap_true.
+
+  IF it_inner IS NOT INITIAL. "eger tablo boş değilise ekranda göster
+
+    CALL FUNCTION 'REUSE_ALV_GRID_DISPLAY'
+      EXPORTING
+        i_callback_program = sy-cprog
+        is_layout          = ls_layout
+*       it_fieldcat        = it_fieldcat
+        i_structure_name   = 'ZFAP_S_ODEV01'
+* IMPORTING
+*       E_EXIT_CAUSED_BY_CALLER           =
+*       ES_EXIT_CAUSED_BY_USER            =
+      TABLES
+        t_outtab           = it_inner
+* EXCEPTIONS
+*       PROGRAM_ERROR      = 1
+*       OTHERS             = 2
+      .
+    IF sy-subrc <> 0.
+* Implement suitable error handling here
+    ENDIF.
+
+  ELSE.  "eğer tablo boş ise error mesajını yaz
+
+    MESSAGE i000(zfa_message_class) DISPLAY LIKE 'E'.
+
+  ENDIF.
+ENDFORM.

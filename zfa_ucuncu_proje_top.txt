@@ -1,0 +1,20 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZFA_UCUNCU_PROJE_TOP
+*&---------------------------------------------------------------------*
+TYPE-POOLS slis.
+
+DATA: it_inner TYPE TABLE OF zfap_s_odev01,   "zfap_s_odev01 stracture tablo oncede gerkli alnları ekledik
+      ls_layout TYPE slis_layout_alv.
+
+DATA : g_vbeln TYPE vbak-vbeln,
+       g_ernam TYPE vbak-ernam,
+       g_audat TYPE vbak-audat,
+       g_auart TYPE vbak-auart,
+       g_vtweg TYPE vbak-vtweg,
+       g_spart TYPE vbak-spart,
+       g_vkgrp TYPE vbak-vkgrp,
+       g_vkbur TYPE vbak-vkbur,
+       g_gsber TYPE vbak-gsber,
+       g_kunnr TYPE vbak-kunnr,
+       g_vkorg TYPE vbak-vkorg,
+       g_matnr TYPE vbap-matnr. "farklı tablo

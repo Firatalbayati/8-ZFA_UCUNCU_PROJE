@@ -1,0 +1,19 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZFA_UCUNCU_PROJE_SCRN
+*&---------------------------------------------------------------------*
+SELECTION-SCREEN BEGIN OF BLOCK blok WITH FRAME TITLE text-001..
+
+SELECT-OPTIONS : s_vbeln FOR g_vbeln NO-EXTENSION NO INTERVALS,
+                 s_ernam FOR g_ernam NO-EXTENSION NO INTERVALS,
+                 s_audat FOR g_audat NO-EXTENSION,
+                 s_auart FOR g_auart NO-EXTENSION,
+                 s_vtweg FOR g_vtweg NO-EXTENSION,
+                 s_spart FOR g_spart NO-EXTENSION,
+                 s_vkgrp FOR g_vkgrp NO-EXTENSION,
+                 s_vkbur FOR g_vkbur NO-EXTENSION,
+                 s_gsber FOR g_gsber NO-EXTENSION,
+                 s_kunnr FOR g_kunnr NO-EXTENSION,
+                 s_vkorg FOR g_vkorg NO-EXTENSION,
+                 s_matnr FOR g_matnr NO-EXTENSION.
+
+SELECTION-SCREEN END OF BLOCK blok.

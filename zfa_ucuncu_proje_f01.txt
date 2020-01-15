@@ -1,0 +1,35 @@
+*&---------------------------------------------------------------------*
+*&  Include           ZFA_UCUNCU_PROJE_F01
+*&---------------------------------------------------------------------*
+FORM get_data.
+  SELECT    vk~vbeln
+            vk~ernam
+            vk~audat
+            vk~auart
+            vk~vtweg
+            vk~spart
+            vk~vkgrp
+            vk~vkbur
+            vk~gsber
+            vk~kunnr
+            vk~vkorg
+            vp~matnr
+
+                       FROM vbak AS vk
+           INNER JOIN vbap AS vp ON
+           vk~vbeln = vp~vbeln
+           INTO CORRESPONDING FIELDS OF TABLE it_inner
+            WHERE vk~vbeln IN s_vbeln
+              AND vk~ernam IN s_ernam
+              AND vk~audat IN s_audat
+              AND vk~auart IN s_auart
+              AND vk~vtweg IN s_vtweg
+              AND vk~spart IN s_spart
+              AND vk~vkgrp IN s_vkgrp
+              AND vk~vkbur IN s_vkbur
+              AND vk~gsber IN s_gsber
+              AND vk~kunnr IN s_kunnr
+              AND vk~vkorg IN s_vkorg
+              AND vp~matnr IN s_matnr.
+
+ENDFORM.

@@ -1,0 +1,26 @@
+" ilk başta bir tane structure tablo oluşturduk adı'ZFAP_S_ODEV01' içine yalnız alanları ekledik( farklı tablolardan farklı alanlar )
+" tablolar kod kısmında eklenecek eger SELECT-OPTIONS'ndan çekeceksek )
+" SELECT-OPTIONS'nsız tabloları koda kısmına yazmaya gerek yok direkt gelecektir[stracturden] )
+" iki tablodan alanları çekmek için SELECT  kısmında INNER JOIN kullandık
+
+REPORT zfa_ucuncu_proje.
+
+INCLUDE zfa_ucuncu_proje_top.
+INCLUDE zfa_ucuncu_proje_scrn.
+INCLUDE zfa_ucuncu_proje_f01.
+INCLUDE zfa_ucuncu_proje_alv.
+
+AT SELECTION-SCREEN.
+
+
+AT SELECTION-SCREEN OUTPUT.
+*  PERFORM modify_screen.
+
+*AT SELECTION-SCREEN ON VALUE-REQUEST FOR s_ad.
+*   PERFORM CHANGE_NAME.
+
+START-OF-SELECTION.
+  PERFORM get_data.
+
+END-OF-SELECTION.
+  PERFORM display.
